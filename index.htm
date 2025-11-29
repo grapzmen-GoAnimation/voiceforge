@@ -170,8 +170,16 @@
 				return;
 			}
 			$.ajax({
-				url: `https://www.acapela-cloud.com/api/command/?voice=${encodeURIComponent(selectedVoice)}&text=${encodeURIComponent(inputText)}&output=stream&type=mp3&samplerate=22050&token=bd8b22e3e5ebbaa05ea0055aec4e16c357c29486`,
+				url: `https://api.voiceforge.com/swift_engine?msg=${encodeURIComponent(inputText)}&voice=${encodeURIComponent(selectedVoice)}&email=chopped@chin.com`,
 				method: 'GET',
+				headers: {
+						"Host": "api.voiceforge.com",
+						"User-Agent": "just_audio/2.7.0 (Linux;Android 14) ExoPlayerLib/2.15.0",
+						"Connection": "Keep-Alive",
+						"Http_x_api_key": "8b3f76a8539",
+						"Accept-Encoding": "gzip, deflate, br",
+						"Icy-Metadata": "1",
+						},
 				success: function (data, status, xhr) {
 					if (xhr.status === 200) {
 						const contentType = xhr.getResponseHeader('Content-Type');
