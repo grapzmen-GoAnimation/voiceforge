@@ -16,8 +16,7 @@
 
 <label for="voice">Select Voice:</label>
 <select id="voice">
-    <option value="Conrad">Conrad</option>
-	<option value="David">David</option>
+    <option value="IVONA 2 Voice Eric22">Eric</option>
 </select>
 
 <br><br>
@@ -40,19 +39,17 @@ document.getElementById("convertBtn").addEventListener("click", async () => {
         return;
     }
 
-    const apiUrl = `https://api.voiceforge.com/swift_engine?msg=${text}&voice=${voice}&email=chopped@chin.com`;
+    const apiUrl = `https://tts.vampi.tech/api/synthesizeSpeech?text=${text}&voice=${voice}&type=text&rate=0&volume=100&outType=mp3&sampleRate=22050&bitDepth=16&channels=2&events=0&transport=stream`;
 
     try {
         const response = await fetch(apiUrl, {
             method: "GET",
             headers: {
-			"Host": "api.voiceforge.com",
-			"User-Agent": "just_audio/2.7.0 (Linux;Android 14) ExoPlayerLib/2.15.0",
-			"Connection": "Keep-Alive",
-			"Http_x_api_key": "8b3f76a8539",
-			"Accept-Encoding": "gzip, deflate, br",
-			"Icy-Metadata": "1",
-			"Sec-Fetch-Mode": "null"
+		    Referer: "https://tts.vampi.tech",
+			Origin: "https://tts.vampi.tech",
+			"Host": "tts.vampi.tech",
+			"Authorization": "7617b522af9b29275865f6794ed504a0",
+			"User-Agent": "just_audio/2.7.0 (Linux;Android 14) ExoPlayerLib/2.15.0"
             }
         });
 
