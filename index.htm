@@ -45,8 +45,8 @@ document.getElementById("convertBtn").addEventListener("click", async () => {
         const response = await fetch(apiUrl, {
             method: "GET",
             headers: {
-		    "Referer": "https://tts.vampi.tech",
-			"Authorization": "7617b522af9b29275865f6794ed504a0"
+			"Authorization": "7617b522af9b29275865f6794ed504a0",
+			Referer: "https://tts.vampi.tech/"
             }
         });
 
